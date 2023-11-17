@@ -1,0 +1,53 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/images/img_2.png');
+    background-size: cover; /* You can adjust this property based on your image and layout */
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1000;
+}
+
+.overp{
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background-image: url('/static/images/img_4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    z-index: 1000;
+}
+
+
+.form-group {
+            position: relative;
+        }
+
+
+        .form-control {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+        }
+
+
+        .form-control:focus {
+            border-color: #007bff;
+        }
+
+
+        label {
+            color: #333;
+        }

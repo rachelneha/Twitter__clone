@@ -7,9 +7,9 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 class User(AbstractUser):
     date_of_Birth = models.DateField(null=True, blank=True)
     followers = models.ManyToManyField('self',related_name='following')
-    following_count = models.IntegerField()
-    followers_count = models.IntegerField()
-    profile_Image = models.ImageField()
+    following_count = models.IntegerField(null=True, blank=True)
+    followers_count = models.IntegerField(null=True, blank=True)
+    profile_Image = models.ImageField(null=True, blank=True)
 
     groups = models.ManyToManyField(
         Group,

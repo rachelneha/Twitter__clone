@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block contents %}
+<div class="overp">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6 col-sm-12">
+                <div class="card mt-3 md-5 col-sm-12">
+                    <div class="card-body text-center mt-3 md-5">
+                        <i class="fa fa-twitter icon fa-3x text-primary icon"></i>
+                        <h3 class="mt-3">SignUp to Twitter</h3>
+                        <form class="mt-3" action="" method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div>
+                                <div style=" justify-content: center; margin-top: 25px;">
+                                    <button type="submit" class="btn btn-primary mt-4"
+                                            style="height: 50px; width: 90%; border-radius: 30px; text-align: center; background: #1194FF; opacity: 0.5; color: #FFF; font-weight: 600; font-family: Verdana;">
+                                        SignUp
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
