@@ -1,66 +1,51 @@
-.nav-pills li a:hover{
-    background-color : lightblue;
-}
-
-    .navbar {
-        min-height: 5px; /* Set your desired height */
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 0.5rem 1rem; /* Adjust padding as needed */
-    }
+/* Add these styles to your styles.css */
 
 
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f8fa;
-    margin: 0;
-    padding: 0;
-}
 
 .post-form-container {
-    background-color: #ffffff;
-    border: 1px solid #e1e8ed;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    width: 600px;
-    max-width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+
+
+
+#id_tweet::placeholder {
+ font-style: italic;
+    color: #808080; /* Dark gray color */
+    font-weight: bold;
 }
 
-input,
-textarea {
-    margin-bottom: 8px;
-    padding: 10px;
-    border: 1px solid #d1d9e6;
-    border-radius: 4px;
-    font-size: 14px;
+.custom-tweet-img {
+    position: relative;
+    display: inline-block;
 }
 
-button {
-    background-color: #1da1f2;
-    color: #ffffff;
-    padding: 8px; /* Adjust padding to make the button smaller */
-    border: none;
-    border-radius: 4px;
+
+
+.custom-tweet-img input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     cursor: pointer;
-    font-size: 12px; /* Adjust font size if needed */
-    width: 60px; /* Set a specific width for the button */
 }
 
-.tweet-form-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px; /* Set a max width for the container */
-    margin: 16px;
+
+.custom-tweet-img i {
+  color: rgb(126, 192, 253); /* Light blue3 */
+  font-size: 20px; /* Increase the size of the icon */
 }
 
-button:hover {
-    background-color: #0c7abf;
+#id_tweet {
+  border: none;
+  padding: 60;
+  display: inline-block;
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
 }
+

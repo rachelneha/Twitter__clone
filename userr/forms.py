@@ -95,7 +95,13 @@ class SignupForm(forms.ModelForm):
 
 
 class TweetForm(forms.ModelForm):
-
     class Meta:
         model = Tweets
         fields = ['tweet', 'tweet_img']
+        widgets = {
+            'tweet': forms.TextInput(attrs={'placeholder': 'What\'s happening?'}),
+        }
+        labels = {
+            'tweet': '',
+            'tweet_img':'',
+        }
