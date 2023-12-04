@@ -1,6 +1,12 @@
 /* Add these styles to your styles.css */
 
+ .twiticon {
+            position: fixed;
+            }
 
+ .sidebar2 {
+            position: fixed;
+            }
 
 .post-form-container {
     background-color: #f8f8f8;;
@@ -14,7 +20,7 @@
 
 #id_tweet::placeholder {
  font-style: italic;
-    color: #808080; /* Dark gray color */
+    color: #008080; /* Dark gray color */
     font-weight: bold;
 }
 

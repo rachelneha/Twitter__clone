@@ -33,7 +33,7 @@ class User(AbstractUser):
         return self.username
 
 class Tweets(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='tweeted_user',null= True,blank = True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,blank=True, null=True,related_name='tweeted_user')
     tweet = models.CharField(max_length=300)
     tweet_img = models.ImageField()
     Retweet_from = models.ForeignKey('self',on_delete=models.CASCADE,related_name='Retweet',null= True,blank = True)

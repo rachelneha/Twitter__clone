@@ -26,6 +26,8 @@ class SignupView(CreateView):
     template_name = "signup.html"
     success_url = reverse_lazy('home')
 
+
+
     def form_valid(self, form):
         user = form.save()
         user.set_password(form.cleaned_data['password'])
@@ -46,6 +48,42 @@ class SignupView(CreateView):
 class HomeView(CreateView):
     model = Tweets
     template_name = "home.html"
-    context_object_name = "tweets"
+    context_object_name = "tweet"
     form_class = TweetForm
     success_url = reverse_lazy('home')
+
+    def form_valid(self ,form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_queryset(self):
+        return Tweets.objects.all().order_by('-tweet')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tweets = self.get_queryset()
+        context["tweets"] = tweets
+        context["u"] = self.request.user
+        return context
+
+
+# class LikeView(ApiView):
+#     model = Tweets
+#     template_name = "home.html"
+#     context_object_name = "tweet"
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+
+
+class ProfileView(DetailView):
+     model = User
+     template_name = "profile.html"
+     context_object_name = "profile"
+
+
+
+     def get_object(self):
+         user=self.request.user
+         return user
+

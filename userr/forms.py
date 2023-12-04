@@ -1,21 +1,12 @@
 from django import forms
-from userr.models import User,Tweets
+from userr.models import User, Tweets
 from django.contrib.auth import authenticate
 import re
 
 
-
-class LoginForm(forms.ModelForm):
-
-
-    class Meta:
-        model = User
-        fields = ['username', 'password', ]
-
-        labels = {
-            'username': 'UserName',
-            'password': 'Password',
-        }
+class LoginForm(forms.Form):
+    username = forms.CharField(label="Username")
+    password = forms.CharField(label="Password")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -47,15 +38,15 @@ class LoginForm(forms.ModelForm):
 
 
 class SignupForm(forms.ModelForm):
-
     password1 = forms.CharField(
-        label = "Renter the Password",
-        widget = forms.PasswordInput,
+        label="Renter the Password",
+        widget=forms.PasswordInput,
 
     )
+
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name','email','password', 'password1']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password', 'password1']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -71,7 +62,7 @@ class SignupForm(forms.ModelForm):
 
         password = self.cleaned_data.get("password")
 
-        if len(password)<8:
+        if len(password) < 8:
             raise forms.ValidationError("Password must conatin alteast 8 charaters")
 
         if not re.search(r'[A-Za-z]', password):
@@ -103,5 +94,5 @@ class TweetForm(forms.ModelForm):
         }
         labels = {
             'tweet': '',
-            'tweet_img':'',
+            'tweet_img': '',
         }
